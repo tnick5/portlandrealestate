@@ -96,16 +96,5 @@
       Just neighbors helping neighbors.</p>
   </section>
 
-  <script>
-    // Auto-resize the Tally iframe so there’s no internal scrollbar
-    window.addEventListener('message', function (e) {
-      if (!e.origin.includes('tally.so')) return;
-      const data = e.data;
-      if (data && typeof data.height === 'number') {
-        const el = document.getElementById('tally-form');
-        el.style.height = data.height + 'px';
-      }
-    });
-  </script>
 </body>
 </html>
