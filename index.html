@@ -50,19 +50,37 @@
     }
 
     .form-container {
-      width: 100%;
-      max-width: 700px;
-      height: 80vh;
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      transform: translateY(20px);
-      opacity: 0;
-      animation: fadeUp 1.2s ease forwards;
-      animation-delay: 0.3s;
-    }
+  width: 100%;
+  max-width: 720px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.10);
 
+  /* NEW: internal padding */
+  padding: 2rem 2rem;
+
+  /* NEW: height adapts to content */
+  height: auto;
+
+  /* NEW: responsive vertical spacing inside */
+  margin: 2rem auto;
+
+  /* Keep your fade-in animation if you want */
+  transform: translateY(18px);
+  opacity: 0;
+  animation: fadeUp 1.1s ease forwards;
+  animation-delay: 0.25s;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1.5rem 1rem; /* slightly less padding on small screens */
+    margin: 1.5rem auto;
+  }
+}
+    
     iframe {
       width: 100%;
       height: 100%;
@@ -93,9 +111,8 @@
 <body>
   <header>
     <h1>Looking to Sell your Home? We're here to Help!</h1>
-    <p>We’re basically like if your favorite neighbor and a NASCAR pit crew had a baby — and that baby bought houses really, really fast.<br>
-      Fill out for this form for me really quick and I'll shoot you a text right away... like in the next 90 seconds.<br>
-Let's get you taken care of.</p>
+    <p>We’re basically like if your favorite neighbor and a NASCAR pit crew had a baby — and that baby bought houses really, really fast.<br><br>
+      Fill out for this form for me really quick and I'll shoot you a text right away... like in the next 90 seconds. Let's get you taken care of.</p>
   </header>
 
   <div class="form-container">
