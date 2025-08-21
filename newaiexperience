@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>99 Social Media Hooks — Free Swipe File</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --yellow:#F6D44B;          /* main brand background (right column) */
+      --yellow-deep:#f0c924;     /* accents */
+      --bg:#ffffff;
+      --text:#111111;
+      --muted:#6b6b6b;
+      --border:#e8e8e8;
+      --accent:#111111;          /* buttons & headings */
+      --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --maxw:1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:#fafafa;
+      line-height:1.45;
+    }
+
+    .shell{
+      max-width:var(--maxw);
+      margin-inline:auto;
+      background:var(--bg);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 640px;
+    }
+
+    /* Left column */
+    .left{
+      padding:42px 40px 30px;
+      background:#fff;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:18px;
+    }
+    .brand__badge{
+      background:#111;
+      color:#fff;
+      font-weight:800;
+      font-size:12px;
+      letter-spacing:.8px;
+      padding:6px 10px;
+      border-radius:6px;
+      text-transform:uppercase;
+    }
+    .eyebrow{
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:.3px;
+      margin:2px 0 14px;
+    }
+    h1{
+      font-size:42px;
+      line-height:1.05;
+      margin:0 0 10px;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+    .subtitle{
+      font-size:15px;
+      color:var(--muted);
+      margin:8px 0 22px;
+    }
+    .subtitle a{ color:#0b63ce; text-decoration:none; border-bottom:1px solid #cfe2ff; }
+    .subtitle a:hover{ border-bottom-color:#0b63ce; }
+
+    /* Form */
+    form{
+      margin-top:14px;
+    }
+    .field{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:#fff;
+      border:1.5px solid var(--border);
+      border-radius:10px;
+      padding:10px 12px;
+      margin-bottom:10px;
+    }
+    .field:focus-within{
+      border-color:#b8b8b8;
+      box-shadow:0 0 0 4px rgba(0,0,0,.03) inset;
+    }
+    .field input{
+      border:0;
+      outline:0;
+      width:100%;
+      font:inherit;
+      padding:6px 2px;
+    }
+    .lock{
+      width:16px;height:16px;opacity:.45;flex:0 0 auto;
+    }
+    .cta{
+      width:100%;
+      border:0;
+      cursor:pointer;
+      padding:14px 18px;
+      background:var(--accent);
+      color:#fff;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:.4px;
+      transition:transform .04s ease, box-shadow .2s ease, background .2s ease;
+      box-shadow: 0 8px 18px rgba(0,0,0,.15);
+    }
+    .cta:hover{ transform:translateY(-1px); background:#000; }
+    .cta:active{ transform:translateY(0); }
+
+    .fineprint{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:10px;
+    }
+
+    /* Right column */
+    .right{
+      background:var(--yellow);
+      padding:42px 40px 30px;
+      position:relative;
+    }
+    .right h2{
+      margin:0 0 18px;
+      text-transform:uppercase;
+      font-size:22px;
+      letter-spacing:1px;
+    }
+    .learn-grid{
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .cover{
+      width:100%;
+      aspect-ratio:3/4;
+      background:#111;
+      border-radius:10px;
+      box-shadow:0 12px 22px rgba(0,0,0,.25);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:800;
+      font-size:14px;
+      text-align:center;
+      padding:12px;
+    }
+    ul.bullets{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:10px;
+    }
+    .bullets li{
+      display:grid;
+      grid-template-columns: 22px 1fr;
+      gap:10px;
+      align-items:start;
+      font-size:15px;
+    }
+    .check{
+      margin-top:2px;
+      width:22px;height:22px;border-radius:50%;
+      border:2px solid #111; display:grid; place-items:center;
+    }
+    .check svg{ width:12px;height:12px }
+    .divider{
+      height:1px;background:rgba(0,0,0,.1); margin:24px 0;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns: 70px 1fr;
+      gap:16px;
+      align-items:center;
+    }
+    .avatar{
+      width:70px;height:70px;border-radius:12px;
+      background:#fff url('') center/cover no-repeat;
+      box-shadow:0 6px 14px rgba(0,0,0,.15);
+    }
+    .about h3{
+      margin:0 0 6px;font-size:14px;text-transform:uppercase;letter-spacing:.6px;
+    }
+    .about p{ margin:0; font-size:14px; }
+    .logos{
+      margin-top:18px;
+      display:flex; flex-wrap:wrap; gap:14px; align-items:center;
+      opacity:.8; font-size:12px;
+    }
+    .logo-pill{
+      background:rgba(255,255,255,.7);
+      border:1px solid rgba(0,0,0,.08);
+      padding:6px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .shell{ grid-template-columns:1fr; }
+      .right{ order:-1; }
+    }
+    @media (max-width: 520px){
+      h1{ font-size:34px; }
+      .learn-grid{ grid-template-columns: 70px 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell" role="main" aria-labelledby="hero-title">
+    <!-- LEFT -->
+    <section class="left">
+      <div class="brand">
+        <span class="brand__badge" aria-label="Copy Posse">COPY POSSE</span>
+      </div>
+      <p class="eyebrow">99 Social Media Hooks That Capture Attention</p>
+      <h1 id="hero-title">Get more clicks, engagement, & conversions</h1>
+      <p class="subtitle">
+        Use these <a href="#">fill-in-the-blank hook templates</a> to write attention-grabbing hooks for your captions, Reel cover photos, headlines, subject lines, ads, YouTube video titles, and sales page openers.
+      </p>
+
+      <form id="optin" novalidate>
+        <label class="field" aria-label="First name">
+          <input type="text" id="firstName" name="firstName" placeholder="First Name" autocomplete="given-name" required />
+          <svg class="lock" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm0 2a3 3 0 0 1 3 3v2H9V7a3 3 0 0 1 3-3Z" fill="#999"/></svg>
+        </label>
+
+        <label class="field" aria-label="Email">
+          <input type="email" id="email" name="email" placeholder="Email" autocomplete="email" required />
+          <svg class="lock" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v1.2l10 5.8 10-5.8V6a2 2 0 0 0-2-2Zm0 5.3-8 4.6-8-4.6V18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9.3Z" fill="#999"/></svg>
+        </label>
+
+        <button class="cta" type="submit" aria-label="Get instant access">Get Instant Access</button>
+        <p class="fineprint">
+          When you sign up for this free guide, I’ll also send you weekly email updates with my latest content and the occasional product recommendation. I’ll always respect your privacy and data.
+        </p>
+      </form>
+    </section>
+
+    <!-- RIGHT -->
+    <aside class="right" aria-labelledby="learn-title">
+      <h2 id="learn-title">What you’ll learn in this free swipe file:</h2>
+
+      <div class="learn-grid">
+        <div class="cover" aria-hidden="true">
+          99 HOT<br/>HOOK TEMPLATES
+        </div>
+
+        <ul class="bullets">
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span>Discover the #1 goal your marketing must accomplish.</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span>Learn when and where a good hook is absolutely critical.</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span>Get 99 Posse-approved hook ideas & templates.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="about">
+        <div class="avatar" role="img" aria-label="Photo of Alex"></div>
+        <div>
+          <h3>About Alex &amp; The Copy Posse</h3>
+          <p>Alex is the founder of the Copy Posse, on a mission to de-douchify the internet and redefine modern marketing with empathy-driven copy. She’s helped over 500,000 marketers & business owners improve their branding, marketing, and copywriting.</p>
+          <div class="logos" aria-label="As seen in">
+            <span class="logo-pill">foundr</span>
+            <span class="logo-pill">AdWorld</span>
+            <span class="logo-pill">Mindvalley</span>
+            <span class="logo-pill">Forbes</span>
+            <span class="logo-pill">teachable</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    // Lightweight client-side validation & demo submission
+    document.getElementById('optin').addEventListener('submit', function(e){
+      e.preventDefault();
+      const first = document.getElementById('firstName');
+      const email = document.getElementById('email');
+
+      // simple checks
+      if(!first.value.trim()){
+        alert('Please enter your first name.');
+        first.focus();
+        return;
+      }
+      const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+      if(!ok){
+        alert('Please enter a valid email address.');
+        email.focus();
+        return;
+      }
+
+      // Replace this with your form handler or ESP endpoint (ConvertKit, Mailchimp, etc.)
+      // Example: fetch('https://your-endpoint.com/subscribe', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ firstName:first.value, email:email.value }) })
+
+      alert('Thanks! Check your inbox for the download link.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
